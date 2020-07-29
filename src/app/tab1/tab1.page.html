@@ -1,17 +1,53 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- ion-header -->
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="normal"><center>Home</center></ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list *ngFor="let s of sport.leagues">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="{{ s.strBadge }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ s.strLeague }}</h2>
+        <p>{{ s.strLeagueAlternate }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text><h2>Logo :</h2></ion-text>
+        <img src="{{ s.strLogo }}" alt="{{ s.strLeagueAlternate }}">
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text><h2>Established   : </h2> <p> {{ s.intFormedYear }} </p> </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text><h2>Sport   : </h2> <p> {{ s.strSport }} </p> </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text><h2>Location   : </h2> <p> {{ s.strCountry }} </p> </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text><h2>Gender   : </h2> <p> {{ s.strGender }} </p> </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <ion-text>
+          <h2>Description :</h2>
+        </ion-text>
+        <p>{{ s.strDescriptionEN }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

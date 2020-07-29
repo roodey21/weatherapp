@@ -13,7 +13,10 @@ export class WeatherService {
 	constructor(private http: HttpClient) { }
 
 	getData(){
-		return this.http.get('${this.url}weather?q=${this.city}&appid=${this.key}&units=metric');
-		
+		return this.http.get(`${this.url}weather?q=${this.city}&appid=${this.key}&lang=id&units=metric`);
 	}
+
+	getForecast(){
+    	return this.http.get(`${this.url}forecast?q=${this.city}&appid=${this.key}&lang=id&units=metric`);
+  	}
 }

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>My Favorite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="{{ fav.badge }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ fav.name }}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-text><h2>Logo :</h2></ion-text>
+          <img src="{{ fav.logo }}" alt="{{ fav.name }}">
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-text><h2>Established   : </h2> <p> {{ fav.est }} </p> </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-text><h2>Stadium   : </h2> <p> {{ fav.stadium }} </p> </ion-text>
+          <img src="{{ fav.stadiumImg }}" alt="{{ fav.stadium }}">
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-text><h2>Location   : </h2> <p> {{ fav.stadiumLoc }} </p> </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-wrap">
+          <ion-text>
+            <h2>Description :</h2>
+          </ion-text>
+          <p>{{ fav.description }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
